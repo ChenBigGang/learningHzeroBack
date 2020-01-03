@@ -130,6 +130,9 @@ zuul:
     hnlp:
       path: /hnlp/**
       serviceId: hzero-nlp
+    hhap:
+      path: /hap/**
+      serviceId: hzero-hap
   semaphore:
     max-semaphores: 300
   sensitiveHeaders: Cookie,Set-Cookie
