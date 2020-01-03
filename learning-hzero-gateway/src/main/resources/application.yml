@@ -224,6 +224,9 @@ hzero:
         - /hwfp-*/activiti-editor
         - /hmsg/sock-js/**
         - /maintain
+        - /hap/lib/**
+        - /hap/static/**
+        - /hap/resources/**
       permission:
         cache-seconds: 600 # 请求地址和对应的权限缓存时间
         cache-size: 3000  # 请求地址和对应的权限缓存大小
