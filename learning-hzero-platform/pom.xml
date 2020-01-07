@@ -25,7 +25,7 @@
 
         <dependency>
             <groupId>org.hzero</groupId>
-            <artifactId>hzero-platform</artifactId>
+            <artifactId>hzero-platform-saas</artifactId>
         </dependency>
 
         <dependency>
