@@ -17,7 +17,7 @@
     <parent>
         <groupId>org.hzero</groupId>
         <artifactId>hzero-parent</artifactId>
-        <version>1.0.0.RELEASE</version>
+        <version>1.1.0.RELEASE</version>
         <!--<version>0.7.1-SNAPSHOT</version>-->
     </parent>
 
@@ -71,7 +71,7 @@
             </dependency>
             <dependency>
                 <groupId>org.hzero</groupId>
-                <artifactId>hzero-iam</artifactId>
+                <artifactId>hzero-iam-saas</artifactId>
                 <version>${hzero.service.version}</version>
             </dependency>
             <dependency>
@@ -81,13 +81,13 @@
             </dependency>
             <dependency>
                 <groupId>org.hzero</groupId>
-                <artifactId>hzero-platform</artifactId>
+                <artifactId>hzero-platform-saas</artifactId>
                 <version>${hzero.service.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.hzero</groupId>
                 <artifactId>hzero-register</artifactId>
-                <version>${hzero.service.version}</version>
+                <version>1.0.0.RELEASE</version>
             </dependency>
             <dependency>
                 <groupId>org.hzero</groupId>
