@@ -16,4 +16,5 @@ eureka:
     disable-delta: true
   server:
     evictionIntervalTimerInMs: 4000
+    peer-node-read-timeout-ms: 1000
     enable-self-preservation: ${EUREKA_SERVER_ENABLE_SELF_PRESERVATION:false}
