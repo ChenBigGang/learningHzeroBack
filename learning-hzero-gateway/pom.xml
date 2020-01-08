@@ -12,44 +12,57 @@
     <artifactId>learning-hzero-gateway</artifactId>
 
     <dependencies>
+        <!-- 数据库驱动 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <!-- 依赖的服务 -->
         <dependency>
             <groupId>org.hzero</groupId>
             <artifactId>hzero-gateway</artifactId>
         </dependency>
 
-        <dependency>
-            <artifactId>mysql-connector-java</artifactId>
-            <groupId>mysql</groupId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hzero.starter</groupId>
-            <artifactId>hzero-starter-config-client</artifactId>
-            <version>${hzero.starter.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.hzero.starter</groupId>
+            <artifactId>hzero-starter-config-client</artifactId>
+        </dependency>
 
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <repositories>
+        <repository>
+            <id>Hzero</id>
+            <name>Hzero Repository</name>
+            <url>http://nexus.saas.hand-china.com/content/groups/hzero/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <!-- 按项目实际情况修改
+            <repository>
+            <id>HzeroRelease</id>
+            <name>Hzero-Release Repository</name>
+            <url>http://nexus.saas.hand-china.com/content/repositories/Hzero-Release/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>HzeroSnapshot</id>
+            <name>Hzero-Snapshot Repository</name>
+            <url>http://nexus.saas.hand-china.com/content/repositories/Hzero-Snapshot/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository> -->
+    </repositories>
 
 
 </project>

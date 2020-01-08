@@ -171,7 +171,7 @@ hzero:
     clean-permission: ${HZERO_PERMISSION_CLEAN_PERMISSION:false}
   resource:
     # 匹配的资源才会解析JwtToken便于得到UserDetails
-    pattern: ${HZERO_RESOURCE_PATTERN:/v1/*,/hzero/*}
+    pattern: ${HZERO_RESOURCE_PATTERN:/v1/*,/hzero/*,/iam/v1/*,/iam/hzero/*}
   export:
     enable-async: true
 

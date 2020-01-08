@@ -41,10 +41,6 @@ spring:
     mode: LEGACYHTML5
 
 server:
-  servlet:
-    session:
-      # session 失效时间设置短一点，登录后让 Session 自动失效
-      timeout: ${SERVER_SERVLET_SESSION_TIMEOUT:120}
   undertow:
     # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接
     # 默认值为8，建议设置每个CPU核心一个线程
@@ -124,7 +120,19 @@ hzero:
     credentials-allow-refresh: ${HZERO_OAUTH_CREDENTIALS_ALLOW_REFRESH:false}
     # 标题
     title: ${HZERO_OAUTH_TITLE:HZERO}
+    # 版权信息
+    copyright: ${HZERO_OAUTH_COPYRIGHT:Copyright © The HZERO Author®. All rights reserved.}
+    # Logo URL
+    logo-url: ${HZERO_OAUTH_LOGO_URL:/oauth/static/main/img/logo.svg}
+    # 登录页面默认语言
+    default-language: ${HZERO_OAUTH_DEFAULT_LANGUAGE:zh_CN}
+    # 是否显示切换语言
+    show-language: ${HZERO_OAUTH_SHOW_LANGUAGE:true}
     login:
+      #网关是否启用https
+      enable-https: ${HZERO_OAUTH_LOGIN_ENABLE_HTTPS:false}
+      #开放给外部的oauth网关地址，支持https
+      gateway-domain: ${HZERO_OAUTH_LOGIN_GATEWAY_DOMAIN:http://dev.hzero.org/oauth}
       # 允许使用的登录名，默认有 用户名、邮箱、手机号
       support-fields: ${HZERO_OAUTH_LOGIN_SUPPORT_FIELDS:username,email,phone}
       # 手机登录参数
@@ -138,12 +146,12 @@ hzero:
       clear-token: ${HZERO_OAUTH_LOGOUT_CLEAR_TOKEN:true}
     sso:
       # 启用二级域名单点登录
-      enabled: ${HZERO_OAUTH_SSO_ENABLED:false}
+      enabled: ${HZERO_OAUTH_SSO_ENABLED:true}
       provider:
         # 用于cas
         key: ${HZERO_OAUTH_SSO_PROVIDER_KEY:hzero}
       service: 
-        baseUrl: ${HZERO_OAUTH_SSO_SERVICE_BASE_URL:http://dev.hzero.org:8080/oauth}
+        baseUrl: ${hzero.oauth.login.gateway-domain}
       saml:
         entity_id: hzero:org:sp
         passphrase: secret
@@ -160,6 +168,7 @@ hzero:
 
 logging:
   level: 
-    org.hzero: ${LOG_LEVEL:debug}
-    io.choerodon: ${LOG_LEVEL:debug}
+    org.hzero: ${LOG_LEVEL:info}
+    io.choerodon: ${LOG_LEVEL:info}
+    org.springframework.security: ${LOG_LEVEL:info}
 

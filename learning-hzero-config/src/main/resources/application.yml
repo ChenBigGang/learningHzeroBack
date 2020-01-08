@@ -2,7 +2,7 @@ spring:
   application:
     name: hzero-config
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://db.hzero.org:3306/hzero_governance?useUnicode=true&characterEncoding=utf-8&useSSL=false}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://db.hzero.org:3306/hzero_admin?useUnicode=true&characterEncoding=utf-8&useSSL=false}
     username: ${SPRING_DATASOURCE_USERNAME:hzero}
     password: ${SPRING_DATASOURCE_PASSWORD:hzero}
     hikari:
@@ -12,14 +12,6 @@ spring:
       maximum-pool-size: ${SPRING_DATASOURCE_MAXIMUM_POOL_SIZE:200}
       # 等待连接池分配连接的最大时长（毫秒）
       connection-timeout: ${SPRING_DATASOURCE_CONNECTION_TIMEOUT:30000}
-  cloud:
-    config:
-      server:
-        git:
-          searchPaths: '{profile}'
-        bootstrap: false # 已自行装配bean,勿设置为true
-  profiles:
-    active: db # db:使用自定义的配置仓库  git: 使用git作为配置仓库
   redis:
     host: ${SPRING_REDIS_HOST:redis.hzero.org}
     port: ${SPRING_REDIS_PORT:6379}
@@ -99,9 +91,9 @@ hzero:
       skip-parse-services: register, gateway, oauth
   resource:
     # 匹配的资源才会解析JwtToken便于得到UserDetails
-    pattern: ${HZERO_RESOURCE_PATTERN:/v1/*,/hzero/*}
+    pattern: ${HZERO_RESOURCE_PATTERN:/v1/*,/hzero/*,/hcnf/v1/*,/hcnf/hzero/*}
   modular:
-    skip-classes: io.choerodon.swagger.CustomController, org.springframework.cloud.config.server.environment.EnvironmentController
+    enable: false
 
 logging:
   level:
