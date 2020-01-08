@@ -12,6 +12,7 @@
         <module>learning-hzero-iam</module>
         <module>learning-hzero-swagger</module>
         <module>learning-hzero-platform</module>
+        <module>learning-hzero-admin</module>
     </modules>
 
     <parent>
@@ -59,6 +60,13 @@
                 <artifactId>hzero-config</artifactId>
                 <version>${hzero.service.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.hzero</groupId>
+                <artifactId>hzero-admin-saas</artifactId>
+                <version>${hzero.service.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.hzero</groupId>
                 <artifactId>hzero-gateway</artifactId>
