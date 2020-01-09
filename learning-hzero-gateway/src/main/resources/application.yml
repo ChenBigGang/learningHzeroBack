@@ -209,7 +209,7 @@ spring:
         predicates:
         - Path=/hap/**
       - id: cg
-        uri: lb://cg-todo-service
+        uri: lb://cg-todo
         predicates:
         - Path=/cgtd/**
 
