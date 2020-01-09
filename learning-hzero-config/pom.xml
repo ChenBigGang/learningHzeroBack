@@ -63,5 +63,8 @@
             </snapshots>
         </repository> -->
     </repositories>
+    <build>
+        <finalName>config</finalName>
+    </build>
 
 </project>

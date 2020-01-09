@@ -64,4 +64,8 @@
         </repository> -->
     </repositories>
 
+    <build>
+        <finalName>oauth</finalName>
+    </build>
+
 </project>

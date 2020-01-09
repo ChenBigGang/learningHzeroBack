@@ -64,4 +64,8 @@
         </repository> -->
     </repositories>
 
+    <build>
+        <finalName>platform</finalName>
+    </build>
+
 </project>

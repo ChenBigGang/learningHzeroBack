@@ -64,4 +64,8 @@
         </repository> -->
     </repositories>
 
+    <build>
+        <finalName>swagger</finalName>
+    </build>
+
 </project>

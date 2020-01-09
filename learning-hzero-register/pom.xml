@@ -64,5 +64,9 @@
         </repository> -->
     </repositories>
 
+    <build>
+        <finalName>register</finalName>
+    </build>
+
 
 </project>
