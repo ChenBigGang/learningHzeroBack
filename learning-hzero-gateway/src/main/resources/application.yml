@@ -204,10 +204,10 @@ spring:
         uri: lb://hzero-admin
         predicates:
         - Path=/hadm/**
-      - id: hap
-        uri: lb://hzero-hap
+      - id: iiam
+        uri: lb://hiam-iiam
         predicates:
-        - Path=/hap/**
+        - Path=/iiam/**
       - id: cg
         uri: lb://cg-todo
         predicates:
