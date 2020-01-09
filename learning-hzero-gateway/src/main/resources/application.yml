@@ -208,6 +208,11 @@ spring:
         uri: lb://hzero-hap
         predicates:
         - Path=/hap/**
+      - id: cg
+        uri: lb://cg-todo-service
+        predicates:
+        - Path=/cgtd/**
+
 
 server:
   undertow:
