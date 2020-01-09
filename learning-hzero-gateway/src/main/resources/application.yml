@@ -208,6 +208,8 @@ spring:
         uri: lb://hiam-iiam
         predicates:
         - Path=/iiam/**
+        filters:
+        - StripPrefix=1
       - id: cg
         uri: lb://cg-todo
         predicates:
